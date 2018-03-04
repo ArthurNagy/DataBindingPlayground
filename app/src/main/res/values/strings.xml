@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DataBindingPlayground</string>
+    <string name="display_name">%1$s %2$s</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="name">Name</string>
+</resources>
