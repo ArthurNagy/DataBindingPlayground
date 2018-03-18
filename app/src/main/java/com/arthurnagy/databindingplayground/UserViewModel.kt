@@ -14,22 +14,8 @@ class UserViewModel : ViewModel() {
     val firstName = ObservableField<String>()
     val lastName = ObservableField<String>()
     val displayName = ObservableField<String>().dependsOn(firstName, lastName) { firstName, lastName ->
-        resourceProvider?.getString(R.string.display_name, firstName ?: "", lastName ?: "") ?: ""
+        resourceProvider?.getString(R.string.display_name, firstName.orEmpty(), lastName.orEmpty()).orEmpty()
     }
     var resourceProvider: ResourceProvider? = null
-
-    init {
-        firstName.observe {
-            println("UserViewModel.onPropertyChanged: firstName: $it")
-        }
-        lastName.observe {
-            println("UserViewModel.onPropertyChanged: lastName: $it")
-
-        }
-        displayName.observe {
-            println("UserViewModel.onPropertyChanged: displayName: $it")
-        }
-
-    }
 
 }

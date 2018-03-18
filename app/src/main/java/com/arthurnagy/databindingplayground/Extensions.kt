@@ -29,7 +29,7 @@ inline fun <D1, D2, T> ObservableField<T>.dependsOn(
 ): ObservableField<T> = this.also {
     val callback = object : Observable.OnPropertyChangedCallback() {
         override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
-            mapper(dependencyOne.get(), dependencyTwo.get())
+            set(mapper(dependencyOne.get(), dependencyTwo.get()))
         }
     }
     dependencyOne.addOnPropertyChangedCallback(callback)
