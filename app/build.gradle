@@ -46,6 +46,8 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:$archComponentsV"
     kapt "android.arch.lifecycle:compiler:$archComponentsV"
 
+    kapt "com.android.databinding:compiler:$build_tools_version"
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'

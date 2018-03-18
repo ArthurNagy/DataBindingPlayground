@@ -7,30 +7,28 @@
 package com.arthurnagy.databindingplayground
 
 import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProvider
-import android.databinding.Observable
 import android.databinding.ObservableField
 
-class UserViewModel(
-    private val stringProvider: StringProvider
-) : ViewModel() {
+class UserViewModel : ViewModel() {
 
     val firstName = ObservableField<String>()
     val lastName = ObservableField<String>()
-    val userName = ObservableField<String>(firstName, lastName)
-
+    val displayName = ObservableField<String>().dependsOn(firstName, lastName) { firstName, lastName ->
+        resourceProvider?.getString(R.string.display_name, firstName ?: "", lastName ?: "") ?: ""
+    }
+    var resourceProvider: ResourceProvider? = null
 
     init {
-        firstName.addOnPropertyChangedCallback(object : Observable.OnPropertyChangedCallback() {
-            override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
+        firstName.observe {
+            println("UserViewModel.onPropertyChanged: firstName: $it")
+        }
+        lastName.observe {
+            println("UserViewModel.onPropertyChanged: lastName: $it")
 
-            }
-        })
-    }
-
-    class MainViewModelFactory(private val stringProvider: StringProvider) : ViewModelProvider.Factory {
-
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T = UserViewModel(stringProvider) as T
+        }
+        displayName.observe {
+            println("UserViewModel.onPropertyChanged: displayName: $it")
+        }
 
     }
 

@@ -11,16 +11,16 @@ import android.databinding.Bindable;
 
 import com.arthurnagy.databindingplayground.BR;
 import com.arthurnagy.databindingplayground.R;
-import com.arthurnagy.databindingplayground.StringProvider;
+import com.arthurnagy.databindingplayground.ResourceProvider;
 
 public class UserViewModel extends BaseObservable {
 
     private String firstName = "";
     private String lastName = "";
-    private final StringProvider stringProvider;
+    private final ResourceProvider resourceProvider;
 
-    public UserViewModel(StringProvider stringProvider) {
-        this.stringProvider = stringProvider;
+    public UserViewModel(ResourceProvider resourceProvider) {
+        this.resourceProvider = resourceProvider;
     }
 
     @Bindable
@@ -35,7 +35,7 @@ public class UserViewModel extends BaseObservable {
 
     @Bindable({"firstName", "lastName"})
     public String getDisplayName() {
-        return stringProvider.getString(R.string.display_name, firstName, lastName);
+        return resourceProvider.getString(R.string.display_name, firstName, lastName);
     }
 
     public void setFirstName(String firstName) {

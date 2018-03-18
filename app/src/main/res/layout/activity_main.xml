@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="com.arthurnagy.databindingplayground.java.UserViewModel" />
+            type="com.arthurnagy.databindingplayground.UserViewModel" />
     </data>
 
     <LinearLayout
@@ -19,11 +19,12 @@
         android:padding="@dimen/first_keyline">
 
         <TextView
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/first_keyline"
             android:text="@{viewModel.displayName}"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:layout_marginBottom="@dimen/first_keyline" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
