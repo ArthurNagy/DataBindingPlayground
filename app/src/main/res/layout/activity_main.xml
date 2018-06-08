@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="com.arthurnagy.databindingplayground.UserViewModel" />
+            type="com.arthurnagy.databindingplayground.livedata.UserViewModel" />
     </data>
 
     <LinearLayout

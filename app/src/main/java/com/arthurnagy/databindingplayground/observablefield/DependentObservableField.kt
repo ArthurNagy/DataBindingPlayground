@@ -4,7 +4,7 @@
  * All rights reserved.
  */
 
-package com.arthurnagy.databindingplayground
+package com.arthurnagy.databindingplayground.observablefield
 
 import androidx.databinding.ObservableField
 

@@ -13,9 +13,7 @@ import com.arthurnagy.databindingplayground.R
 import com.arthurnagy.databindingplayground.ResourceProvider
 import com.arthurnagy.databindingplayground.bindable
 
-class UserViewModel(
-    private val resourceProvider: ResourceProvider
-) : BaseObservable() {
+class UserViewModel(private val resourceProvider: ResourceProvider) : BaseObservable() {
 
 //    @get:Bindable
 //    var firstName: String = ""
