@@ -6,12 +6,12 @@
 
 package com.arthurnagy.databindingplayground.java;
 
-import android.databinding.BaseObservable;
-import android.databinding.Bindable;
-
 import com.arthurnagy.databindingplayground.BR;
 import com.arthurnagy.databindingplayground.R;
 import com.arthurnagy.databindingplayground.ResourceProvider;
+
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
 
 public class UserViewModel extends BaseObservable {
 

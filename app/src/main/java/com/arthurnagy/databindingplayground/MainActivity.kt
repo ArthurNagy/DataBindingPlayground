@@ -6,9 +6,9 @@
 
 package com.arthurnagy.databindingplayground
 
-import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 
 class MainActivity : AppCompatActivity() {
 

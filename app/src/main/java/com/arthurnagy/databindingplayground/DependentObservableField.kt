@@ -6,7 +6,7 @@
 
 package com.arthurnagy.databindingplayground
 
-import android.databinding.ObservableField
+import androidx.databinding.ObservableField
 
 
 class DependentObservableField<T, R>(

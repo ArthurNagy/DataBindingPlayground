@@ -6,11 +6,11 @@
 
 package com.arthurnagy.databindingplayground
 
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProviders
-import android.databinding.Observable
-import android.databinding.ObservableField
-import android.support.v4.app.FragmentActivity
+import androidx.databinding.Observable
+import androidx.databinding.ObservableField
+import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProviders
 
 inline fun <T> ObservableField<T>.observe(crossinline observer: (T?) -> Unit): Observable.OnPropertyChangedCallback {
     val callback = object : Observable.OnPropertyChangedCallback() {

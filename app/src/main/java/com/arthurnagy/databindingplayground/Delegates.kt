@@ -6,7 +6,7 @@
 
 package com.arthurnagy.databindingplayground
 
-import android.databinding.BaseObservable
+import androidx.databinding.BaseObservable
 import kotlin.reflect.KProperty
 
 fun <R : BaseObservable, T : Any> bindable(value: T, bindingId: Int): BindableDelegate<R, T> = BindableDelegate(value, bindingId)

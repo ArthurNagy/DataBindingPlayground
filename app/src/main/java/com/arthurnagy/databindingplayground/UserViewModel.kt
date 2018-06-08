@@ -6,8 +6,8 @@
 
 package com.arthurnagy.databindingplayground
 
-import android.arch.lifecycle.ViewModel
-import android.databinding.ObservableField
+import androidx.databinding.ObservableField
+import androidx.lifecycle.ViewModel
 
 class UserViewModel : ViewModel() {
 

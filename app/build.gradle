@@ -11,14 +11,14 @@ apply plugin: 'kotlin-kapt'
 
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion compile_sdk
     defaultConfig {
         applicationId "com.arthurnagy.databindingplayground"
-        minSdkVersion 19
-        targetSdkVersion 27
+        minSdkVersion min_sdk
+        targetSdkVersion target_sdk
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -32,23 +32,28 @@ android {
 }
 
 ext {
-    supportLibV = '27.1.0'
-    archComponentsV = '1.1.0'
+    androidx = '1.0.0-alpha3'
+    lifecycle = '2.0.0-alpha1'
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation "com.android.support:appcompat-v7:$supportLibV"
-    implementation "com.android.support:design:$supportLibV"
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation "android.arch.lifecycle:extensions:$archComponentsV"
-    kapt "android.arch.lifecycle:compiler:$archComponentsV"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    kapt "com.android.databinding:compiler:$build_tools_version"
+    implementation "androidx.appcompat:appcompat:$androidx"
+    implementation "androidx.core:core-ktx:$androidx"
+    implementation "com.google.android.material:material:$androidx"
+
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.1'
+
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle"
+
+    kapt "androidx.databinding:databinding-compiler:$build_tools_version"
 
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha3'
 }

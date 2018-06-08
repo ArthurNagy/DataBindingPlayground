@@ -6,8 +6,8 @@
 
 package com.arthurnagy.databindingplayground.bindable
 
-import android.databinding.BaseObservable
-import android.databinding.Bindable
+import androidx.databinding.BaseObservable
+import androidx.databinding.Bindable
 import com.arthurnagy.databindingplayground.BR
 import com.arthurnagy.databindingplayground.R
 import com.arthurnagy.databindingplayground.ResourceProvider
