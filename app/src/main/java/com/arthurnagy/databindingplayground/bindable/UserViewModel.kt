@@ -1,9 +1,3 @@
-/*
- * Copyright (c) 2018 Halcyon Mobile
- * http://www.halcyonmobile.com
- * All rights reserved.
- */
-
 package com.arthurnagy.databindingplayground.bindable
 
 import androidx.databinding.BaseObservable
@@ -11,7 +5,6 @@ import androidx.databinding.Bindable
 import com.arthurnagy.databindingplayground.BR
 import com.arthurnagy.databindingplayground.R
 import com.arthurnagy.databindingplayground.ResourceProvider
-import com.arthurnagy.databindingplayground.bindable
 
 class UserViewModel(private val resourceProvider: ResourceProvider) : BaseObservable() {
 

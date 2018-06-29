@@ -1,9 +1,3 @@
-/*
- * Copyright (c) 2018 Halcyon Mobile
- * http://www.halcyonmobile.com
- * All rights reserved.
- */
-
 package com.arthurnagy.databindingplayground.observablefield
 
 import androidx.databinding.ObservableField
@@ -18,6 +12,10 @@ class UserViewModel(
 
     val firstName = ObservableField<String>()
     val lastName = ObservableField<String>()
+
+//    val displayName = DependentObservableField(firstName, lastName) { (firstName, lastName) ->
+//        resourceProvider.getString(R.string.display_name, firstName.orEmpty(), lastName.orEmpty())
+//    }
 
     val displayName = ObservableField<String>().dependsOn(firstName, lastName) { firstName, lastName ->
         resourceProvider.getString(R.string.display_name, firstName.orEmpty(), lastName.orEmpty())

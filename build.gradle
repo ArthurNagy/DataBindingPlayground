@@ -1,14 +1,8 @@
-/*
- * Copyright (c) 2018 Halcyon Mobile
- * http://www.halcyonmobile.com
- * All rights reserved.
- */
-
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.2.41'
-    ext.build_tools_version = '3.2.0-alpha17'
+    ext.kotlin_version = '1.2.50'
+    ext.build_tools_version = '3.2.0-beta02'
     repositories {
         google()
         jcenter()
@@ -35,6 +29,6 @@ task clean(type: Delete) {
 
 ext {
     min_sdk = project.hasProperty('minSdkV') ? minSdkV.toInteger() : 19
-    target_sdk = 27
-    compile_sdk = 'android-P'
+    target_sdk = 28
+    compile_sdk = 28
 }

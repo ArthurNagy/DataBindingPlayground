@@ -11,15 +11,12 @@ import androidx.databinding.ObservableField
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.*
 
-inline fun <T> ObservableField<T>.observe(crossinline observer: (T?) -> Unit): Observable.OnPropertyChangedCallback {
-    val callback = object : Observable.OnPropertyChangedCallback() {
+inline fun <reified T : Observable> T.observe(crossinline observer: (T) -> Unit): Observable.OnPropertyChangedCallback =
+    object : Observable.OnPropertyChangedCallback() {
         override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
-            observer(this@observe.get())
+            observer(sender as T)
         }
-    }
-    this.addOnPropertyChangedCallback(callback)
-    return callback
-}
+    }.also { addOnPropertyChangedCallback(it) }
 
 inline fun <T, D1, D2> ObservableField<T>.dependsOn(
     dependencyOne: ObservableField<D1>,

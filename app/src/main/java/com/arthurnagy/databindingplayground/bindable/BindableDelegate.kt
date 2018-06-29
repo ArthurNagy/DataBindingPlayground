@@ -1,15 +1,10 @@
-/*
- * Copyright (c) 2018 Halcyon Mobile
- * http://www.halcyonmobile.com
- * All rights reserved.
- */
-
-package com.arthurnagy.databindingplayground
+package com.arthurnagy.databindingplayground.bindable
 
 import androidx.databinding.BaseObservable
 import kotlin.reflect.KProperty
 
-fun <R : BaseObservable, T : Any> bindable(value: T, bindingId: Int): BindableDelegate<R, T> = BindableDelegate(value, bindingId)
+fun <R : BaseObservable, T : Any> bindable(value: T, bindingId: Int): BindableDelegate<R, T> =
+    BindableDelegate(value, bindingId)
 
 class BindableDelegate<in R : BaseObservable, T : Any>(
     private var value: T,
