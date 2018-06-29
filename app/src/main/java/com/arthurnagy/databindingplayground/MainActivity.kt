@@ -9,7 +9,7 @@ package com.arthurnagy.databindingplayground
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.arthurnagy.databindingplayground.livedata.UserViewModel
+import com.arthurnagy.databindingplayground.observablefield.UserViewModel
 
 class MainActivity : AppCompatActivity() {
 

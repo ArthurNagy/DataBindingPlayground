@@ -11,7 +11,6 @@ import androidx.databinding.Bindable
 import com.arthurnagy.databindingplayground.BR
 import com.arthurnagy.databindingplayground.R
 import com.arthurnagy.databindingplayground.ResourceProvider
-import com.arthurnagy.databindingplayground.bindable
 
 class UserViewModel(private val resourceProvider: ResourceProvider) : BaseObservable() {
 
