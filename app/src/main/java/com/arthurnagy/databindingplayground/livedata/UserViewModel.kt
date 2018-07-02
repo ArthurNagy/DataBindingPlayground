@@ -6,9 +6,7 @@ import com.arthurnagy.databindingplayground.R
 import com.arthurnagy.databindingplayground.ResourceProvider
 import com.arthurnagy.databindingplayground.dependantLiveData
 
-class UserViewModel(
-    private val resourceProvider: ResourceProvider
-) : ViewModel() {
+class UserViewModel(private val resourceProvider: ResourceProvider) : ViewModel() {
 
     val firstName = MutableLiveData<String>()
     val lastName = MutableLiveData<String>()

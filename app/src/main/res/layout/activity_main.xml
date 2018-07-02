@@ -5,7 +5,7 @@
 
         <variable
             name="viewModel"
-            type="com.arthurnagy.databindingplayground.observablefield.UserViewModel" />
+            type="com.arthurnagy.databindingplayground.livedata.UserViewModel" />
     </data>
 
     <LinearLayout

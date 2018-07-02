@@ -6,17 +6,14 @@ import com.arthurnagy.databindingplayground.R
 import com.arthurnagy.databindingplayground.ResourceProvider
 import com.arthurnagy.databindingplayground.dependantObservableField
 
-class UserViewModel(
-    private val resourceProvider: ResourceProvider
-) : ViewModel() {
+class UserViewModel(private val resourceProvider: ResourceProvider) : ViewModel() {
 
     val firstName = ObservableField<String>()
     val lastName = ObservableField<String>()
 
 //    val displayName: ObservableField<String> = object : ObservableField<String>(firstName, lastName) {
-//        override fun get(): String {
-//            return resourceProvider.getString(R.string.display_name, firstName.get().orEmpty(), lastName.get().orEmpty())
-//        }
+//        override fun get() =
+//            resourceProvider.getString(R.string.display_name, firstName.get().orEmpty(), lastName.get().orEmpty())
 //    }
 
     val displayName = dependantObservableField(firstName, lastName) {
