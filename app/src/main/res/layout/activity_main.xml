@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2018 Halcyon Mobile
-  ~ http://www.halcyonmobile.com
-  ~ All rights reserved.
-  -->
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data class=".MainBinding">
 
         <variable
             name="viewModel"
-            type="com.arthurnagy.databindingplayground.livedata.UserViewModel" />
+            type="com.arthurnagy.databindingplayground.observablefield.UserViewModel" />
     </data>
 
     <LinearLayout
